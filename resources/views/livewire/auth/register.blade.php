@@ -1,5 +1,5 @@
 <div>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    @include('components.fontawesome-loader')
     
     <!-- Essential CSS Files for Livewire Auth (cPanel Compatible with Cache-Busting) -->
     <link rel="stylesheet" href="{{ asset('css/button-fixes.css') }}?v={{ filemtime(public_path('css/button-fixes.css')) }}">

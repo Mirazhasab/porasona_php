@@ -623,6 +623,7 @@ class MCQDashboardController extends Controller
         $mcqSets = McqSet::with(['questions' => function($query) {
             $query->limit(5); // Preview only first 5 questions
         }])
+        ->withCount('questions')
         ->where('status', 'approved')
         ->orderBy('created_at', 'desc')
         ->paginate(12);
@@ -630,8 +631,10 @@ class MCQDashboardController extends Controller
         // Get reading statistics
         $stats = [
             'totalSets' => McqSet::where('status', 'approved')->count(),
-            'totalQuestions' => \App\Models\McqQuestion::count(),
-            'categories' => collect(['General Knowledge', 'Government Job', 'Science', 'Mathematics', 'English']), // Fallback categories
+            'totalQuestions' => \App\Models\McqQuestion::whereHas('mcqSet', function ($query) {
+                $query->where('status', 'approved');
+            })->count(),
+            'categories' => collect(['BCS', 'BANK', 'NTRCA', 'Bangla', 'English']), // Fallback categories
             'recentlyAdded' => McqSet::where('status', 'approved')
                 ->where('created_at', '>=', now()->subDays(7))
                 ->count()

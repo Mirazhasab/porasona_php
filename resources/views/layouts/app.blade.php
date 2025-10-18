@@ -14,9 +14,25 @@
     
     
     <!-- JavaScript Files with cache-busting -->
-    <script src="{{ asset('js/global-fixes.js') }}?v={{ filemtime(public_path('js/global-fixes.js')) }}"></script>    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="{{ asset('js/global-fixes.js') }}?v={{ filemtime(public_path('js/global-fixes.js')) }}"></script>
+
+    @php
+        use App\Helpers\ViteHelper;
+
+        $usingHotReload = file_exists(public_path('hot'));
+        $viteCss = ViteHelper::asset('resources/css/app.css');
+        $viteJs = ViteHelper::asset('resources/js/app.js');
+    @endphp
+
+    @if ($usingHotReload)
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @elseif ($viteCss)
+        <link rel="stylesheet" href="{{ $viteCss }}">
+        @if ($viteJs)
+            <script type="module" src="{{ $viteJs }}" defer></script>
+        @endif
+    @endif
+    @include('components.fontawesome-loader')
     
     <style>
     /* Professional text colors for app layout */

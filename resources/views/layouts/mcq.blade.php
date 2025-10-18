@@ -63,7 +63,7 @@
       } catch (e) {}
     });
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  @include('components.fontawesome-loader')
   <!-- CSS with cache-busting for cPanel compatibility -->
   <link rel="stylesheet" href="{{ asset('css/asset-loader.css') }}?v={{ filemtime(public_path('css/asset-loader.css')) }}">
   <link rel="stylesheet" href="{{ asset('css/force-light-theme.css') }}?v={{ filemtime(public_path('css/force-light-theme.css')) }}">

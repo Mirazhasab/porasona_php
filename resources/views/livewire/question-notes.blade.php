@@ -33,13 +33,13 @@
 	@endpush
 @endonce
 
-<div class="relative space-y-4" data-question-notes data-question-id="{{ $question->id }}">
+<div class="relative space-y-4 px-0 md:px-2" data-question-notes data-question-id="{{ $question->id }}">
 	@if($openMenuId)
 		<button type="button" wire:click="closeMenu" class="fixed inset-0 z-20 block h-full w-full cursor-default bg-transparent" aria-label="Close note menu"></button>
 	@endif
 
 	<section class="rounded-xl border border-gray-200 bg-white shadow-sm">
-		<header class="flex flex-col gap-4 border-b border-gray-100 p-4 md:flex-row md:items-center md:justify-between">
+		<header class="flex flex-col gap-4 border-b border-gray-100 p-0 md:flex-row md:items-center md:justify-between">
 			<div class="flex items-center gap-2">
 				<i data-lucide="notebook" class="h-5 w-5 text-blue-600"></i>
 				<div>
@@ -47,53 +47,45 @@
 					<p class="text-xs text-gray-500">Toggle between private drafts and community explanations.</p>
 				</div>
 			</div>
-			<nav class="flex items-center gap-2 rounded-lg bg-gray-100 p-1" aria-label="Notes tabs">
-				<button type="button" wire:click="switchTab('private')" data-notes-tab="private" @class([
-						'inline-flex items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold transition-colors',
-						'bg-white text-blue-700 shadow-sm' => $activeTab === 'private',
-						'text-gray-600 hover:text-gray-800' => $activeTab !== 'private',
-				])>
-					<span>Private</span>
-					<span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-current text-[11px]">{{ $this->myNotes->count() }}</span>
+			<div class="flex flex-wrap items-center gap-2">
+				<nav class="flex items-center gap-2 rounded-lg bg-gray-100 p-1" aria-label="Notes tabs">
+					<button type="button" wire:click="switchTab('private')" data-notes-tab="private" @class([
+							'inline-flex items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold transition-colors',
+							'bg-white text-blue-700 shadow-sm' => $activeTab === 'private',
+							'text-gray-600 hover:text-gray-800' => $activeTab !== 'private',
+					])>
+						<span>Private</span>
+						<span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-current text-[11px]">{{ $this->myNotes->count() }}</span>
+					</button>
+					<button type="button" wire:click="switchTab('public')" data-notes-tab="public" @class([
+							'inline-flex items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold transition-colors',
+							'bg-white text-blue-700 shadow-sm' => $activeTab === 'public',
+							'text-gray-600 hover:text-gray-800' => $activeTab !== 'public',
+					])>
+						<span>Community</span>
+						<span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-current text-[11px]">{{ $this->communityNotes->count() }}</span>
+					</button>
+				</nav>
+				<button type="button" wire:click="$refresh" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-600 hover:bg-gray-100">
+					<i data-lucide="refresh-cw" class="h-3 w-3"></i>
+					Refresh
 				</button>
-				<button type="button" wire:click="switchTab('public')" data-notes-tab="public" @class([
-						'inline-flex items-center gap-2 rounded-md px-3 py-2 text-xs font-semibold transition-colors',
-						'bg-white text-blue-700 shadow-sm' => $activeTab === 'public',
-						'text-gray-600 hover:text-gray-800' => $activeTab !== 'public',
-				])>
-					<span>Community</span>
-					<span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-current text-[11px]">{{ $this->communityNotes->count() }}</span>
-				</button>
-			</nav>
+			</div>
 		</header>
 
-		<div class="space-y-4 p-4">
+		<div class="space-y-4 p-0 md:p-1">
 			@if($activeTab === 'private')
-				@auth
-					<div class="flex flex-wrap items-center justify-between gap-3">
-						<p class="text-sm text-gray-600">Draft personal strategies, mnemonics, or reminders. Submit when you want moderators to review.</p>
-						<div class="flex items-center gap-2">
-							<button type="button" wire:click="startNewNote" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-2 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-blue-700">
-								<i data-lucide="plus" class="h-3 w-3"></i>
-								{{ $editingNoteId ? 'Continue Editing' : 'New Private Note' }}
-							</button>
-							<button type="button" wire:click="$refresh" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-600 hover:bg-gray-100">
-								<i data-lucide="refresh-cw" class="h-3 w-3"></i>
-								Refresh
-							</button>
-						</div>
-					</div>
-				@else
-					<div class="rounded-lg border border-dashed border-blue-300 bg-blue-50 p-4 text-sm text-blue-800">
+				@guest
+					<div class="rounded-lg border border-dashed border-blue-300 bg-blue-50 p-1 text-sm text-blue-800">
 						<strong>Login required:</strong> sign in to keep private notes and request community sharing.
 					</div>
-				@endauth
+				@endguest
 
 				<div @class([
-						'note-form-card rounded-lg border border-gray-200 bg-white shadow-sm',
+						'note-form-card rounded-none md:rounded-lg border-0 md:border border-gray-200 bg-white shadow-sm md:shadow-sm',
 						'hidden' => !$showForm,
 				]) data-question-id="{{ $question->id }}">
-					<div class="flex items-start justify-between gap-3 border-b border-gray-100 p-4">
+					<div class="flex items-start justify-between gap-3 border-b border-gray-100 p-1">
 						<div>
 							<h3 class="text-sm font-semibold text-gray-900">{{ $editingNoteId ? 'Edit Private Note' : 'Create Private Note' }}</h3>
 							<p class="text-xs text-gray-500">Supports Markdown, MathJax, and code blocks for deep explanations.</p>
@@ -102,7 +94,7 @@
 							<button type="button" wire:click="cancelEdit" class="text-xs text-gray-500 hover:text-gray-700">Close</button>
 						@endif
 					</div>
-					<div class="p-4">
+					<div class="p-1">
 						@auth
 							<form wire:submit.prevent="saveNote" class="space-y-5" data-note-highlight-form>
 								<div class="space-y-2">
@@ -183,8 +175,8 @@
 
 				<div class="space-y-4">
 					@forelse($this->myNotes as $note)
-						<article class="rounded-2xl border border-gray-200 bg-white shadow-sm" wire:key="note-{{ $note->id }}">
-							<header class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 bg-gray-50 px-6 py-3">
+						<article class="rounded-none border-t border-b border-gray-200 bg-white shadow-sm md:rounded-2xl md:border" wire:key="note-{{ $note->id }}">
+							<header class="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 bg-gray-50 px-3 py-2.5 md:px-6 md:py-3">
 								<div class="flex items-center gap-2">
 									<span class="inline-flex items-center justify-center rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide @class([
 										'bg-green-100 text-green-700 border border-green-200' => $note->visibility === McqNote::VISIBILITY_APPROVED,
@@ -229,7 +221,7 @@
 									</div>
 								</div>
 							</header>
-							<div class="space-y-4 px-6 py-5">
+							<div class="space-y-4 px-3 py-4 md:px-6 md:py-5">
 								<div class="prose prose-sm max-w-none leading-relaxed text-gray-800">
 									{!! $note->content_html !!}
 								</div>
@@ -242,31 +234,25 @@
 							</div>
 						</article>
 					@empty
-						<div class="rounded-lg border border-dashed border-gray-300 p-4 text-sm text-gray-500">
+						<div class="rounded-lg border border-dashed border-gray-300 p-1 text-sm text-gray-500">
 							No private notes yet. Start one above to capture your process or quick reminders.
 						</div>
 					@endforelse
 				</div>
 			@else
-				<div class="flex flex-wrap items-center justify-between gap-3">
-					<p class="text-sm text-gray-600">Moderator-approved notes showcase polished explanations from top learners.</p>
-					<button type="button" wire:click="$refresh" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-xs font-semibold text-gray-600 hover:bg-gray-100">
-						<i data-lucide="refresh-cw" class="h-3 w-3"></i>
-						Refresh
-					</button>
-				</div>
+				
 
 				<div class="space-y-3">
 					@forelse($this->communityNotes as $note)
-						<article class="rounded-xl border border-blue-100 bg-white shadow-sm">
-							<header class="flex flex-wrap items-center justify-between gap-3 border-b border-blue-100 bg-blue-50 px-4 py-2.5">
+						<article class="rounded-none md:rounded-xl border border-blue-100 bg-white shadow-sm">
+							<header class="flex flex-wrap items-center justify-between gap-3 border-b border-blue-100 bg-blue-50 px-3 md:px-4 py-2.5">
 								<p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-700">
 									<i data-lucide="sparkles" class="h-4 w-4"></i>
 									{{ $note->user->name }}
 								</p>
 								<span class="text-xs text-blue-700">Approved {{ optional($note->approved_at)->diffForHumans() }}</span>
 							</header>
-							<div class="space-y-3 px-4 py-4">
+							<div class="space-y-3 px-3 py-4 md:px-4">
 								@if($note->title)
 									<h3 class="text-base font-semibold text-blue-900">{{ $note->title }}</h3>
 								@endif
@@ -276,7 +262,7 @@
 							</div>
 						</article>
 					@empty
-						<div class="rounded-lg border border-dashed border-blue-300 bg-blue-50 p-4 text-sm text-blue-700">
+						<div class="rounded-lg border border-dashed border-blue-300 bg-blue-50 p-1 text-sm text-blue-700">
 							No community explanations yet. Submit a refined private note for moderator review.
 						</div>
 					@endforelse
@@ -289,15 +275,46 @@
 @once
 	@push('scripts')
 		<script>
-			(function loadMathJax() {
-				if (!document.getElementById('mathjax-script')) {
+			(function ensureMathJax() {
+				if (window.MathJax) {
+					renderNotesMath();
+					return;
+				}
+
+				const existing = document.getElementById('mathjax-script');
+				if (existing && existing.dataset.loading === 'true') {
+					existing.addEventListener('load', renderNotesMath, { once: true });
+					return;
+				}
+
+				const sources = [
+					'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+					'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+				];
+
+				function loadFrom(index) {
+					if (window.MathJax || index >= sources.length) {
+						return;
+					}
+
 					const script = document.createElement('script');
 					script.id = 'mathjax-script';
 					script.type = 'text/javascript';
-					script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
 					script.async = true;
+					script.dataset.loading = 'true';
+					script.src = sources[index];
+					script.onload = function () {
+						script.dataset.loading = 'false';
+						renderNotesMath();
+					};
+					script.onerror = function () {
+						script.remove();
+						loadFrom(index + 1);
+					};
 					document.head.appendChild(script);
 				}
+
+				loadFrom(0);
 			})();
 
 			function renderNotesMath() {
@@ -323,7 +340,57 @@
 					console.log((type || 'info').toUpperCase() + ': ' + message);
 				}
 			});
+
+			document.addEventListener('click', function (event) {
+				const button = event.target.closest('[data-highlight-color]');
+				if (!button) {
+					return;
+				}
+
+				event.preventDefault();
+
+				const form = button.closest('[data-note-highlight-form]');
+				if (!form) {
+					return;
+				}
+
+				const textarea = form.querySelector('textarea[name="content"]');
+				if (!textarea) {
+					return;
+				}
+
+				const color = button.dataset.highlightColor;
+				if (!color) {
+					return;
+				}
+
+				const start = textarea.selectionStart || 0;
+				const end = textarea.selectionEnd || 0;
+				const value = textarea.value || '';
+				const openingTag = '[[hl:' + color + ']]';
+				const closingTag = '[[/hl]]';
+
+				const selectedText = start !== end
+					? value.slice(start, end)
+					: 'Highlight this text';
+
+				const before = value.slice(0, start);
+				const after = value.slice(end);
+				const updatedValue = before + openingTag + selectedText + closingTag + after;
+
+				textarea.value = updatedValue;
+				textarea.dispatchEvent(new Event('input', { bubbles: true }));
+
+				const selectionStart = before.length + openingTag.length;
+				const selectionEnd = selectionStart + selectedText.length;
+
+				setTimeout(function () {
+					textarea.focus();
+					if (typeof textarea.setSelectionRange === 'function') {
+						textarea.setSelectionRange(selectionStart, selectionEnd);
+					}
+				}, 0);
+			});
 		</script>
-		<script src="{{ asset('js/question-notes.js') }}" defer></script>
 	@endpush
 @endonce

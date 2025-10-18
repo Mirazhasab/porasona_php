@@ -17,7 +17,7 @@
 
     <!-- MCQ Set Header -->
     <section class="bg-white rounded-2xl border border-gray-200 shadow-sm mb-4 overflow-hidden">
-        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-4 sm:p-6">
+        <div class="bg-gradient-to-r from-blue-500 to-indigo-600 p-1 sm:p-1">
             <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{{ $mcqSet->title }}</h1>
             <div class="flex flex-wrap items-center gap-2">
                 @if($mcqSet->category)
@@ -33,7 +33,7 @@
         </div>
 
         <!-- Stats Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-4 bg-gray-50">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-1 bg-gray-50">
             <div class="text-center">
                 <div class="text-blue-600 mb-1">
                     <i data-lucide="help-circle" class="w-5 h-5 sm:w-6 sm:h-6 mx-auto" aria-hidden="true"></i>
@@ -91,7 +91,7 @@
 
     <!-- Questions Content -->
     <article class="bg-white rounded-2xl border border-gray-200 shadow-sm">
-        <header class="p-3 sm:p-4 border-b border-gray-100">
+        <header class="p-1 sm:p-1 border-b border-gray-100">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <h2 class="text-base sm:text-lg font-semibold text-gray-900">Questions & Answers</h2>
                 <div class="flex flex-wrap items-center gap-2">
@@ -109,13 +109,13 @@
             </div>
         </header>
 
-        <div class="p-3 sm:p-4">
+        <div class="p-1 sm:p-1">
             @if($mcqSet->questions->count() > 0)
                 <div class="space-y-4">
                     @foreach($mcqSet->questions as $index => $question)
                         <section class="question-card bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow" aria-labelledby="question-{{ $question->id }}">
                             <!-- Question Header -->
-                            <div class="p-3 sm:p-4 border-b border-gray-100">
+                            <div class="p-1 sm:p-1 border-b border-gray-100">
                                 <div class="flex items-start gap-3">
                                     <div class="flex-shrink-0">
                                         <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-lg flex items-center justify-center font-bold text-sm sm:text-base">{{ $index + 1 }}</div>
@@ -131,7 +131,7 @@
                             </div>
 
                             <!-- Options -->
-                            <div class="p-3 sm:p-4">
+                            <div class="p-1 sm:p-1">
                                 <div class="space-y-2">
                                     @for($i = 1; $i <= 4; $i++)
                                         @php
@@ -186,13 +186,13 @@
 
                                     <div class="notes-section hidden mt-3" aria-hidden="true" data-question-id="{{ $question->id }}">
                                         @if($hasNotes)
-                                            <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg mb-3">
+                                            <div class="p-1 bg-blue-50 border border-blue-200 rounded-lg mb-3">
                                                 <p class="text-xs sm:text-sm font-semibold text-blue-900 mb-1">Official Explanation</p>
                                                 <p class="text-xs sm:text-sm text-blue-800 leading-relaxed">{{ $question->notes }}</p>
                                             </div>
                                         @endif
 
-                                        <div class="p-3 bg-white border border-gray-200 rounded-lg">
+                                        <div class="p-1 bg-white border border-gray-200 rounded-lg">
                                             @livewire('question-notes', ['questionId' => $question->id], key('question-notes-'.$question->id))
                                         </div>
                                     </div>

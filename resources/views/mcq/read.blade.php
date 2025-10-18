@@ -6,7 +6,7 @@
 
 @section('content')
 <!-- Stats Grid -->
-<div class="stats-grid grid grid-cols-2 lg:grid-cols-4 mb-6">
+<div class="stats-grid grid grid-cols-2 gap-1.5 sm:gap-3 lg:grid-cols-4 mb-3 md:mb-6">
     <div class="stat-card bg-white hover:shadow-md transition-all duration-300 group">
         <div class="flex items-center justify-between">
             <div class="flex-1">
@@ -74,12 +74,12 @@
 
 <!-- Categories Filter -->
 @if($stats['categories']->count() > 0)
-<div class="bg-white rounded-2xl border-2 border-gray-300 shadow-sm mb-6">
-    <div class="p-6 border-b border-gray-200">
+<div class="bg-white rounded-2xl border border-gray-200 shadow-sm mb-0 md:mb-6">
+    <div class="p-0 md:p-6 border-b border-gray-200">
         <h3 class="text-lg font-semibold text-gray-800">Browse by Category</h3>
     </div>
-    <div class="p-6">
-        <div class="flex flex-wrap gap-2">
+    <div class="p-0 md:p-6">
+        <div class="flex flex-wrap gap-2 sm:gap-3">
             <a href="{{ route('mcq.read') }}" class="inline-flex items-center px-3 py-2 bg-blue-100 text-blue-800 text-sm rounded-lg hover:bg-blue-200 transition-colors">
                 <i data-lucide="grid-3x3" class="w-4 h-4 mr-2"></i>
                 All Categories
@@ -96,18 +96,21 @@
 @endif
 
 <!-- MCQ Sets Grid -->
-<div class="bg-white rounded-2xl border-2 border-gray-300 shadow-sm">
-    <div class="p-6 border-b border-gray-200">
+<div class="bg-white rounded-2xl border border-gray-200 shadow-sm">
+    <div class="p-0 md:p-6 border-b border-gray-200">
         <h3 class="text-lg font-semibold text-gray-800">MCQ Study Materials</h3>
         <p class="text-sm text-gray-600 mt-1">Browse and study available MCQ sets</p>
     </div>
-    <div class="p-6">
+    <div class="p-0 md:p-6">
         @if($mcqSets->count() > 0)
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 gap-0 sm:gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
                 @foreach($mcqSets as $mcqSet)
-                    <div class="mcq-set-card bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-teal-300 hover:shadow-lg transition-all duration-300">
+                    @php
+                        $questionCount = $mcqSet->questions_count ?? $mcqSet->questions->count();
+                    @endphp
+                    <div class="mcq-set-card bg-white border border-gray-200 rounded-xl p-0 md:p-6 hover:border-teal-300 hover:shadow-lg transition-all duration-300">
                         <!-- Header -->
-                        <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-start justify-between mb-0 md:mb-4">
                             <div class="flex-1">
                                 <h4 class="font-semibold text-gray-800 mb-2 line-clamp-2">{{ $mcqSet->title }}</h4>
                                 @if($mcqSet->category)
@@ -126,14 +129,14 @@
 
                         <!-- Description -->
                         @if($mcqSet->description)
-                            <p class="text-sm text-gray-600 mb-4 line-clamp-3">{{ $mcqSet->description }}</p>
+                            <p class="text-sm text-gray-600 mb-0 md:mb-4 line-clamp-3">{{ $mcqSet->description }}</p>
                         @endif
 
                         <!-- Stats -->
-                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-0 md:mb-4">
                             <div class="flex items-center">
                                 <i data-lucide="help-circle" class="w-4 h-4 mr-1"></i>
-                                <span>{{ $mcqSet->questions->count() }}+ Questions</span>
+                                    <span>{{ number_format($questionCount) }} {{ \Illuminate\Support\Str::plural('Question', $questionCount) }}</span>
                             </div>
                             <div class="flex items-center">
                                 <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
@@ -142,8 +145,8 @@
                         </div>
 
                         <!-- Sample Questions Preview -->
-                        @if($mcqSet->questions->count() > 0)
-                            <div class="border-t border-gray-200 pt-4 mb-4">
+                        @if($questionCount > 0)
+                            <div class="border-t border-gray-200 pt-0 md:pt-4 mb-0 md:mb-4">
                                 <h5 class="text-sm font-medium text-gray-700 mb-2">Sample Questions:</h5>
                                 <div class="space-y-2">
                                     @foreach($mcqSet->questions->take(2) as $question)
@@ -151,9 +154,9 @@
                                             <span class="font-medium">Q:</span> {{ Str::limit($question->question, 80) }}
                                         </div>
                                     @endforeach
-                                    @if($mcqSet->questions->count() > 2)
+                                    @if($questionCount > 2)
                                         <div class="text-xs text-gray-500 italic">
-                                            +{{ $mcqSet->questions->count() - 2 }} more questions...
+                                            +{{ number_format($questionCount - 2) }} more questions...
                                         </div>
                                     @endif
                                 </div>
@@ -178,17 +181,17 @@
 
             <!-- Pagination -->
             @if($mcqSets->hasPages())
-                <div class="mt-8 flex justify-center">
+                <div class="mt-4 md:mt-8 flex justify-center">
                     {{ $mcqSets->links() }}
                 </div>
             @endif
         @else
-            <div class="text-center py-12">
-                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="text-center py-10 md:py-12">
+                <div class="w-20 h-20 md:w-24 md:h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
                     <i data-lucide="book-open" class="w-12 h-12 text-gray-400"></i>
                 </div>
                 <h3 class="text-lg font-medium text-gray-900 mb-2">No MCQ Sets Available</h3>
-                <p class="text-gray-500 mb-4">There are no approved MCQ sets available for reading at the moment.</p>
+                <p class="text-gray-500 mb-3 md:mb-4">There are no approved MCQ sets available for reading at the moment.</p>
                 @if($isAdmin)
                     <a href="{{ route('mcq_sets.create') }}" class="inline-flex items-center px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors">
                         <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
