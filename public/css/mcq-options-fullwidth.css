@@ -1,0 +1,391 @@
+/* MCQ Options Full Width Styling - All Pages */
+
+/* ===== EXAM TAKING PAGE - Radio Button Options ===== */
+
+/* Full width MCQ option labels */
+.mcq-option-label,
+label[class*="flex items-start p-2 border-2 border-gray-300 rounded cursor-pointer"] {
+    width: 100% !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 0.75rem !important;
+    border: 2px solid #d1d5db !important; /* gray-300 */
+    border-radius: 0.5rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease-in-out !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Hover states for MCQ options */
+.mcq-option-label:hover,
+label[class*="flex items-start p-2 border-2 border-gray-300 rounded cursor-pointer"]:hover {
+    border-color: #6b7280 !important; /* gray-500 */
+    background-color: #f9fafb !important; /* gray-50 */
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Selected state for MCQ options */
+.mcq-option-label:has(input:checked),
+label[class*="flex items-start p-2 border-2 border-gray-300 rounded cursor-pointer"]:has(input:checked) {
+    border-color: #3b82f6 !important; /* blue-500 */
+    background-color: #eff6ff !important; /* blue-50 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* MCQ option content container */
+.mcq-option-content {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 !important;
+}
+
+/* MCQ option letter badge */
+.mcq-option-badge {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    border-radius: 50% !important;
+    background-color: #e5e7eb !important; /* gray-200 */
+    border: 2px solid #d1d5db !important; /* gray-300 */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 0.75rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: #374151 !important; /* gray-700 */
+    transition: all 0.2s ease-in-out !important;
+    flex-shrink: 0 !important;
+}
+
+/* MCQ option text */
+.mcq-option-text {
+    flex: 1 !important;
+    font-size: 0.875rem !important;
+    color: #374151 !important; /* gray-700 */
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Hover state for badge */
+.mcq-option-label:hover .mcq-option-badge {
+    background-color: #6b7280 !important; /* gray-500 */
+    color: #ffffff !important;
+    transform: scale(1.1) !important;
+}
+
+/* Selected state for badge */
+.mcq-option-label:has(input:checked) .mcq-option-badge {
+    background-color: #3b82f6 !important; /* blue-500 */
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+    transform: scale(1.1) !important;
+}
+
+/* Selected state for text */
+.mcq-option-label:has(input:checked) .mcq-option-text {
+    color: #1e40af !important; /* blue-800 */
+    font-weight: 500 !important;
+}
+
+/* Hide default radio button */
+.mcq-option-label input[type="radio"] {
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+}
+
+/* ===== QUESTION CREATION/EDITING FORMS ===== */
+
+/* Full width answer input containers */
+.answer-input-container {
+    width: 100% !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Answer input fields */
+.answer-input-field {
+    flex: 1 !important;
+    width: 100% !important;
+    padding: 0.75rem 1rem !important;
+    border: 1px solid #d1d5db !important; /* gray-300 */
+    border-radius: 0.5rem !important;
+    font-size: 0.875rem !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.answer-input-field:focus {
+    outline: none !important;
+    border-color: #3b82f6 !important; /* blue-500 */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Answer letter badges in forms */
+.answer-letter-badge {
+    width: 2rem !important;
+    height: 2.5rem !important;
+    background-color: #f3f4f6 !important; /* gray-100 */
+    border-radius: 0.375rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    color: #374151 !important; /* gray-700 */
+    flex-shrink: 0 !important;
+    border: 1px solid #d1d5db !important; /* gray-300 */
+}
+
+/* ===== QUESTION DISPLAY/PRACTICE PAGES ===== */
+
+/* Full width question containers */
+.question-container {
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Question options container */
+.question-options-container {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+}
+
+/* Individual question option */
+.question-option {
+    width: 100% !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 0.75rem !important;
+    border: 1px solid #e5e7eb !important; /* gray-200 */
+    border-radius: 0.5rem !important;
+    background-color: #ffffff !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.question-option:hover {
+    border-color: #d1d5db !important; /* gray-300 */
+    background-color: #f9fafb !important; /* gray-50 */
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .mcq-option-label {
+        padding: 0.5rem !important;
+        margin-bottom: 0.375rem !important;
+    }
+    
+    .mcq-option-badge {
+        width: 1.25rem !important;
+        height: 1.25rem !important;
+        margin-right: 0.5rem !important;
+        font-size: 0.625rem !important;
+    }
+    
+    .mcq-option-text {
+        font-size: 0.8125rem !important;
+    }
+    
+    .answer-input-container {
+        gap: 0.5rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .answer-input-field {
+        padding: 0.625rem 0.75rem !important;
+        font-size: 0.8125rem !important;
+    }
+    
+    .answer-letter-badge {
+        width: 1.75rem !important;
+        height: 2.25rem !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .mcq-option-label {
+        padding: 0.625rem !important;
+    }
+    
+    .mcq-option-text {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+    .mcq-option-label {
+        padding: 0.875rem !important;
+        margin-bottom: 0.625rem !important;
+    }
+    
+    .mcq-option-text {
+        font-size: 0.9375rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .answer-input-field {
+        padding: 0.875rem 1.125rem !important;
+        font-size: 0.9375rem !important;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+
+/* Focus states for keyboard navigation */
+.mcq-option-label:focus-within {
+    outline: 2px solid #3b82f6 !important;
+    outline-offset: 2px !important;
+}
+
+.answer-input-field:focus {
+    outline: 2px solid #3b82f6 !important;
+    outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .mcq-option-label {
+        border-width: 3px !important;
+    }
+    
+    .mcq-option-label:hover {
+        border-color: #000000 !important;
+    }
+    
+    .mcq-option-label:has(input:checked) {
+        border-color: #0000ff !important;
+        background-color: #e6f3ff !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .mcq-option-label,
+    .mcq-option-badge,
+    .answer-input-field {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .mcq-option-label {
+        border: 1px solid #000000 !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .mcq-option-badge {
+        background-color: transparent !important;
+        border: 1px solid #000000 !important;
+        color: #000000 !important;
+    }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Force full width for any MCQ component */
+.mcq-full-width {
+    width: 100% !important;
+    display: block !important;
+}
+
+/* Compact spacing for dense layouts */
+.mcq-compact {
+    margin-bottom: 0.25rem !important;
+    padding: 0.5rem !important;
+}
+
+/* Large spacing for spacious layouts */
+.mcq-spacious {
+    margin-bottom: 1rem !important;
+    padding: 1rem !important;
+}
+
+/* No border variant */
+.mcq-borderless {
+    border: none !important;
+    background-color: #f9fafb !important; /* gray-50 */
+}
+
+.mcq-borderless:hover {
+    background-color: #f3f4f6 !important; /* gray-100 */
+}
+
+/* ===== LEGACY COMPATIBILITY ===== */
+
+/* Ensure any existing MCQ components get full width */
+input[name*="question_"] + div,
+input[name*="question_"] ~ div,
+label:has(input[name*="question_"]) {
+    width: 100% !important;
+}
+
+/* Legacy radio button containers */
+.radio-container,
+.option-container,
+.answer-container {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Legacy form inputs for MCQ */
+input[name^="ans_"],
+textarea[name^="ans_"] {
+    width: 100% !important;
+    flex: 1 !important;
+}
+
+/* Legacy MCQ display components */
+.mcq-display,
+.question-display,
+.exam-question {
+    width: 100% !important;
+}
+
+.mcq-display .option,
+.question-display .option,
+.exam-question .option {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Ensure all radio inputs in MCQ contexts are properly styled */
+input[type="radio"][name*="question"] {
+    margin-right: 0.5rem !important;
+}
+
+/* Force full width for any element with MCQ-related classes */
+[class*="mcq"],
+[class*="question"],
+[class*="answer"],
+[class*="option"] {
+    max-width: 100% !important;
+}
+
+/* Responsive text wrapping for long options */
+.mcq-option-text,
+.answer-text,
+.option-text {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+}

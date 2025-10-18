@@ -1,0 +1,40 @@
+/* cPanel Hosting Fixes - CSS only, no PHP changes */
+/* 1) Normalize box sizing and ensure consistent fonts */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* 2) Ensure CSS @import relative paths work from cPanel public_html symlink */
+/* Nothing to do here, but keeping as doc note. Files are relative to this folder. */
+
+/* 3) Fix :has selector unsupported in some cPanel browsers */
+/* Fallback for MCQ option checked state: apply highlight when input is checked with adjacent sibling pattern */
+/* Markup: <label class="mcq-option-label"><input type="radio"/> ... </label> */
+.mcq-option-label input[type="radio"]:checked + .option-text,
+.mcq-option-label input[type="checkbox"]:checked + .option-text {
+  background-color: #eff6ff; /* blue-50 */
+  border-color: #3b82f6; /* blue-500 */
+}
+
+/* When using wrapper structure, style label itself when input is checked (if possible) */
+.mcq-option-label input[type="radio"]:checked ~ *,
+.mcq-option-label input[type="checkbox"]:checked ~ * {
+  --_cpanel-checked: 1;
+}
+
+/* 4) Safe defaults for images and flex gaps on older browsers */
+img { max-width: 100%; height: auto; }
+.flex { gap: var(--gap, 0.5rem); }
+
+/* 5) Ensure overlays and z-index stack correctly on cPanel */
+#mobileOverlay, #examOverlay, .modal-backdrop { position: fixed; inset: 0; z-index: 9998; }
+
+/* 6) Fonts fallbacks to avoid missing font on cPanel */
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; }
+
+/* 7) Force light theme for cPanel previews */
+:root { color-scheme: light; }
+
+/* 8) Print fallback: Make anchors blue and underlined */
+@media print {
+  a { color: #1d4ed8 !important; text-decoration: underline !important; }
+}
