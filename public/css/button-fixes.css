@@ -1,0 +1,596 @@
+/* Button Text Visibility Fixes for MCQ Pro */
+
+/* Primary Button Fixes */
+.btn-primary,
+.bg-primary-500,
+.bg-primary-600,
+.bg-primary-700 {
+    color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.bg-primary-500:hover,
+.bg-primary-600:hover {
+    color: #ffffff !important;
+}
+
+/* Secondary Button Fixes */
+.btn-secondary,
+.bg-secondary {
+    color: #ffffff !important;
+}
+
+/* Gray Button Fixes - Light backgrounds with dark text */
+.bg-gray-50,
+.bg-gray-100,
+.bg-gray-200 {
+    color: #374151 !important; /* gray-700 */
+}
+
+.bg-gray-50:hover,
+.bg-gray-100:hover,
+.bg-gray-200:hover {
+    color: #1f2937 !important; /* gray-800 */
+}
+
+/* Gray Button Fixes - Medium backgrounds with dark text */
+.bg-gray-300,
+.bg-gray-400 {
+    color: #1f2937 !important; /* gray-800 */
+}
+
+.bg-gray-300:hover,
+.bg-gray-400:hover {
+    color: #111827 !important; /* gray-900 */
+}
+
+/* Gray Button Fixes - Dark backgrounds with light text */
+.bg-gray-500,
+.bg-gray-600,
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900 {
+    color: #ffffff !important;
+}
+
+/* Dark mode specific fixes */
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+.dark .bg-gray-200 {
+    color: #111827 !important; /* Keep dark text on light backgrounds */
+}
+
+.dark .bg-gray-300,
+.dark .bg-gray-400 {
+    color: #111827 !important; /* Keep dark text on medium backgrounds */
+}
+
+.dark .bg-gray-500,
+.dark .bg-gray-600,
+.dark .bg-gray-700,
+.dark .bg-gray-800,
+.dark .bg-gray-900 {
+    color: #f9fafb !important; /* Light text on dark backgrounds */
+}
+
+/* Status Button Fixes */
+.bg-green-500,
+.bg-green-600,
+.bg-green-700 {
+    color: #ffffff !important;
+}
+
+.bg-red-500,
+.bg-red-600,
+.bg-red-700 {
+    color: #ffffff !important;
+}
+
+.bg-yellow-500,
+.bg-yellow-600,
+.bg-yellow-700 {
+    color: #ffffff !important;
+}
+
+.bg-blue-500,
+.bg-blue-600,
+.bg-blue-700 {
+    color: #ffffff !important;
+}
+
+.bg-purple-500,
+.bg-purple-600,
+.bg-purple-700 {
+    color: #ffffff !important;
+}
+
+.bg-orange-500,
+.bg-orange-600,
+.bg-orange-700 {
+    color: #ffffff !important;
+}
+
+/* Light status backgrounds with dark text */
+.bg-green-50,
+.bg-green-100,
+.bg-green-200 {
+    color: #065f46 !important; /* green-800 */
+}
+
+.bg-red-50,
+.bg-red-100,
+.bg-red-200 {
+    color: #991b1b !important; /* red-800 */
+}
+
+.bg-yellow-50,
+.bg-yellow-100,
+.bg-yellow-200 {
+    color: #92400e !important; /* yellow-800 */
+}
+
+.bg-blue-50,
+.bg-blue-100,
+.bg-blue-200 {
+    color: #1e40af !important; /* blue-800 */
+}
+
+.bg-purple-50,
+.bg-purple-100,
+.bg-purple-200 {
+    color: #6b21a8 !important; /* purple-800 */
+}
+
+.bg-orange-50,
+.bg-orange-100,
+.bg-orange-200 {
+    color: #9a3412 !important; /* orange-800 */
+}
+
+/* Disabled button fixes */
+button:disabled,
+.cursor-not-allowed {
+    opacity: 0.6;
+}
+
+.bg-gray-300.cursor-not-allowed,
+.bg-gray-400.cursor-not-allowed {
+    color: #6b7280 !important; /* gray-500 */
+}
+
+.dark .bg-gray-600.cursor-not-allowed,
+.dark .bg-gray-700.cursor-not-allowed {
+    color: #9ca3af !important; /* gray-400 */
+}
+
+/* Specific fixes for common button patterns */
+.btn-cancel,
+.bg-gray-300.text-gray-800 {
+    background-color: #d1d5db !important; /* gray-300 */
+    color: #1f2937 !important; /* gray-800 */
+}
+
+.btn-cancel:hover,
+.bg-gray-300.text-gray-800:hover,
+.bg-gray-400.text-gray-800 {
+    background-color: #9ca3af !important; /* gray-400 */
+    color: #111827 !important; /* gray-900 */
+}
+
+/* Navigation button fixes */
+.nav-item {
+    color: #374151 !important; /* gray-700 - better contrast */
+    background-color: transparent !important;
+}
+
+.nav-item:hover {
+    color: #1f2937 !important; /* gray-800 */
+    background-color: #f3f4f6 !important; /* gray-100 */
+}
+
+.nav-item.active {
+    color: #1f2937 !important; /* gray-800 */
+    background-color: #f3f4f6 !important; /* gray-100 */
+    border: 2px solid #d1d5db !important; /* gray-300 */
+}
+
+.dark .nav-item {
+    color: #d1d5db !important; /* gray-300 */
+}
+
+.dark .nav-item:hover {
+    color: #f9fafb !important; /* gray-50 */
+    background-color: #374151 !important; /* gray-700 */
+}
+
+.dark .nav-item.active {
+    color: #f9fafb !important; /* gray-50 */
+    background-color: #374151 !important; /* gray-700 */
+    border: 2px solid #6b7280 !important; /* gray-500 */
+}
+
+/* Mobile navigation fixes */
+.mobile-nav-item {
+    color: #374151 !important; /* gray-700 - better contrast */
+    background-color: transparent !important;
+}
+
+.mobile-nav-item:hover {
+    color: #1f2937 !important; /* gray-800 */
+    background-color: #f3f4f6 !important; /* gray-100 */
+}
+
+.mobile-nav-item.active {
+    color: #1f2937 !important; /* gray-800 */
+    background-color: #f3f4f6 !important; /* gray-100 */
+    border: 2px solid #d1d5db !important; /* gray-300 */
+}
+
+.dark .mobile-nav-item {
+    color: #d1d5db !important; /* gray-300 */
+}
+
+.dark .mobile-nav-item:hover {
+    color: #f9fafb !important; /* gray-50 */
+    background-color: #374151 !important; /* gray-700 */
+}
+
+.dark .mobile-nav-item.active {
+    color: #f9fafb !important; /* gray-50 */
+    background-color: #374151 !important; /* gray-700 */
+    border: 2px solid #6b7280 !important; /* gray-500 */
+}
+
+/* Form button fixes */
+button[type="submit"] {
+    color: #ffffff !important;
+}
+
+button[type="button"].bg-gray-300,
+button[type="button"].bg-gray-400 {
+    color: #1f2937 !important; /* gray-800 */
+}
+
+/* Link button fixes */
+a.bg-primary-500,
+a.bg-primary-600,
+a.bg-primary-700 {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+a.bg-gray-300,
+a.bg-gray-400 {
+    color: #1f2937 !important; /* gray-800 */
+    text-decoration: none;
+}
+
+/* Badge and status indicator fixes */
+.badge {
+    font-weight: 500;
+}
+
+.badge.bg-green-100 {
+    color: #065f46 !important; /* green-800 */
+}
+
+.badge.bg-red-100 {
+    color: #991b1b !important; /* red-800 */
+}
+
+.badge.bg-yellow-100 {
+    color: #92400e !important; /* yellow-800 */
+}
+
+.badge.bg-blue-100 {
+    color: #1e40af !important; /* blue-800 */
+}
+
+/* Ensure icons inherit text color */
+button i,
+a i,
+.btn i {
+    color: inherit;
+}
+
+/* Responsive text fixes */
+@media (max-width: 768px) {
+    .mobile-nav-item {
+        font-size: 0.75rem;
+    }
+    
+    .mobile-nav-item i {
+        font-size: 1.25rem;
+    }
+}
+
+/* Focus states */
+button:focus,
+a:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-gray-300,
+    .bg-gray-400 {
+        border: 1px solid #000000;
+    }
+    
+    .bg-primary-500,
+    .bg-primary-600 {
+        border: 1px solid #ffffff;
+    }
+}
+
+/* Specific fixes for exam buttons */
+.exam-card-button,
+.exam-submit-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    background-color: #3b82f6 !important;
+    border: none !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.exam-card-button:hover,
+.exam-submit-button:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* Dashboard exam card fixes */
+.dashboard-exam-card {
+    display: block !important;
+}
+
+.dashboard-exam-card .bg-primary-500 {
+    display: flex !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Dashboard specific button fixes */
+.dashboard-exam-card .exam-card-button {
+    background-color: #2563eb !important; /* blue-600 */
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+}
+
+.dashboard-exam-card .exam-card-button:hover {
+    background-color: #1d4ed8 !important; /* blue-700 */
+    border-color: #1d4ed8 !important;
+    color: #ffffff !important;
+}
+
+/* Quick action button fixes */
+.quick-action-blue {
+    border-color: #93c5fd !important; /* blue-300 */
+    color: #1d4ed8 !important; /* blue-700 */
+}
+
+.quick-action-blue:hover {
+    border-color: #3b82f6 !important; /* blue-500 */
+    background-color: #eff6ff !important; /* blue-50 */
+    color: #1e40af !important; /* blue-800 */
+}
+
+.quick-action-green {
+    border-color: #86efac !important; /* green-300 */
+    color: #15803d !important; /* green-700 */
+}
+
+.quick-action-green:hover {
+    border-color: #22c55e !important; /* green-500 */
+    background-color: #f0fdf4 !important; /* green-50 */
+    color: #166534 !important; /* green-800 */
+}
+
+.quick-action-purple {
+    border-color: #c4b5fd !important; /* purple-300 */
+    color: #7c3aed !important; /* purple-700 */
+}
+
+.quick-action-purple:hover {
+    border-color: #8b5cf6 !important; /* purple-500 */
+    background-color: #faf5ff !important; /* purple-50 */
+    color: #6b21a8 !important; /* purple-800 */
+}
+
+.quick-action-orange {
+    border-color: #fdba74 !important; /* orange-300 */
+    color: #c2410c !important; /* orange-700 */
+}
+
+.quick-action-orange:hover {
+    border-color: #f97316 !important; /* orange-500 */
+    background-color: #fff7ed !important; /* orange-50 */
+    color: #9a3412 !important; /* orange-800 */
+}
+
+/* Form submit button fixes */
+form button[type="submit"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    background-color: #3b82f6 !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+form button[type="submit"]:hover {
+    background-color: #2563eb !important;
+}
+
+/* Ensure buttons are not hidden by other elements */
+button,
+a.bg-primary-500,
+a.bg-primary-600 {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Fix for nested button issues */
+a button {
+    pointer-events: none !important;
+}
+
+/* Make sure exam buttons are clickable */
+.exam-action-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.5rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease-in-out !important;
+    text-decoration: none !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+.exam-action-button.primary {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+.exam-action-button.primary:hover {
+    background-color: #2563eb !important;
+}
+
+.exam-action-button.secondary {
+    background-color: #6b7280 !important;
+    color: #ffffff !important;
+}
+
+.exam-action-button.secondary:hover {
+    background-color: #4b5563 !important;
+}
+
+/* Additional dashboard button fixes */
+.dashboard-exam-card .bg-gray-100 {
+    background-color: #f3f4f6 !important; /* gray-100 */
+    color: #374151 !important; /* gray-700 */
+    border-color: #d1d5db !important; /* gray-300 */
+}
+
+/* Status badge fixes */
+.bg-gray-100.text-gray-700 {
+    background-color: #f3f4f6 !important; /* gray-100 */
+    color: #374151 !important; /* gray-700 */
+    border: 1px solid #d1d5db !important; /* gray-300 */
+}
+
+/* Leaderboard button fixes */
+.leaderboard-item {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important; /* gray-300 */
+    color: #374151 !important; /* gray-700 */
+}
+
+/* Post card link fixes */
+.post-card-link {
+    color: #374151 !important; /* gray-700 */
+    text-decoration: none !important;
+}
+
+.post-card-link:hover {
+    color: #1f2937 !important; /* gray-800 */
+    background-color: #f9fafb !important; /* gray-50 */
+}
+
+/* Ensure all dashboard text is readable */
+.dashboard-text-fix {
+    color: #374151 !important; /* gray-700 */
+}
+
+.dashboard-text-fix.text-gray-500 {
+    color: #6b7280 !important; /* gray-500 */
+}
+
+.dashboard-text-fix.text-gray-400 {
+    color: #9ca3af !important; /* gray-400 */
+}
+
+/* Examination page specific button fixes for cPanel */
+.exam-action-button {
+    background-color: #2563eb !important; /* blue-600 */
+    color: #ffffff !important;
+    border: 2px solid #2563eb !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease-in-out !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.exam-action-button:hover {
+    background-color: #1d4ed8 !important; /* blue-700 */
+    border-color: #1d4ed8 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.exam-action-button:focus {
+    outline: 2px solid #3b82f6 !important;
+    outline-offset: 2px !important;
+    color: #ffffff !important;
+}
+
+.exam-action-button:visited {
+    color: #ffffff !important;
+}
+
+/* Start Exam button specific fixes */
+a[href*="exam"]:not([href*="view"]) {
+    background-color: #2563eb !important; /* blue-600 */
+    color: #ffffff !important;
+    border: 2px solid #2563eb !important;
+    text-decoration: none !important;
+}
+
+a[href*="exam"]:not([href*="view"]):hover {
+    background-color: #1d4ed8 !important; /* blue-700 */
+    border-color: #1d4ed8 !important;
+    color: #ffffff !important;
+}
+
+/* Icon color fixes for exam buttons */
+.exam-action-button i,
+a[href*="exam"] i {
+    color: #ffffff !important;
+}
+
+/* Disabled button fixes for examinations */
+button:disabled.cursor-not-allowed {
+    background-color: #d1d5db !important; /* gray-300 */
+    color: #6b7280 !important; /* gray-500 */
+    border-color: #d1d5db !important;
+    opacity: 0.6 !important;
+}
+
+/* Create Exam button fixes */
+button[class*="bg-blue-600"] {
+    background-color: #2563eb !important; /* blue-600 */
+    color: #ffffff !important;
+    border: 2px solid #2563eb !important;
+}
+
+button[class*="bg-blue-600"]:hover {
+    background-color: #1d4ed8 !important; /* blue-700 */
+    border-color: #1d4ed8 !important;
+    color: #ffffff !important;
+}

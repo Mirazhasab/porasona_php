@@ -1,0 +1,214 @@
+/* FORCE LIGHT THEME - HIGHEST PRIORITY */
+
+/* Global overrides */
+* {
+    color: #1e293b !important;
+}
+
+html, body {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+}
+
+/* Background overrides */
+.bg-gray-50, .bg-gray-100, .bg-gray-200 {
+    background-color: #f8fafc !important;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.bg-gray-800, .bg-gray-900, .bg-black {
+    background-color: #ffffff !important;
+}
+
+/* Text color overrides */
+.text-white {
+    color: #1e293b !important;
+}
+
+.text-gray-900, .text-gray-800, .text-gray-700 {
+    color: #1e293b !important;
+}
+
+.text-gray-600 {
+    color: #475569 !important;
+}
+
+.text-gray-500, .text-gray-400 {
+    color: #64748b !important;
+}
+
+/* Navigation overrides */
+.nav-item {
+    color: #475569 !important;
+    background-color: transparent !important;
+}
+
+.nav-item:hover {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+}
+
+.nav-item.active {
+    background-color: #dbeafe !important;
+    color: #3b82f6 !important;
+}
+
+.mobile-nav-item {
+    color: #64748b !important;
+}
+
+.mobile-nav-item.active {
+    color: #3b82f6 !important;
+}
+
+/* Button overrides */
+button, .btn, a.btn {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border-color: #cbd5e1 !important;
+}
+
+button:hover, .btn:hover, a.btn:hover {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+}
+
+.btn-primary, button[type="submit"] {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+    border-color: #3b82f6 !important;
+}
+
+.btn-primary:hover, button[type="submit"]:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* Form overrides */
+input, textarea, select {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border-color: #cbd5e1 !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Card overrides */
+.card, .question-card, .mcq-option-label {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Sidebar overrides */
+#sidebar, aside {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Header overrides */
+header {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Main content overrides */
+main {
+    background-color: #f8fafc !important;
+}
+
+/* Icon overrides */
+i, .fas, .far, .fab {
+    color: inherit !important;
+}
+
+/* Specific component overrides */
+.brand-logo, .h-text, .care-text {
+    color: #1e293b !important;
+}
+
+.auth-form, .mobile-auth-container {
+    background-color: #ffffff !important;
+}
+
+/* Exam page specific */
+.exam-action-button, .exam-submit-button {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+.exam-action-button.secondary {
+    background-color: #64748b !important;
+    color: #ffffff !important;
+}
+
+/* MCQ options */
+.mcq-option-badge {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+    border-color: #cbd5e1 !important;
+}
+
+.mcq-option-label:hover .mcq-option-badge {
+    background-color: #64748b !important;
+    color: #ffffff !important;
+}
+
+.mcq-option-label:has(input:checked) .mcq-option-badge {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+/* Alert overrides */
+.alert-success {
+    background-color: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+.alert-danger, .alert-error {
+    background-color: #fef2f2 !important;
+    color: #dc2626 !important;
+}
+
+/* Table overrides */
+table {
+    background-color: #ffffff !important;
+}
+
+th {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+}
+
+td {
+    color: #1e293b !important;
+}
+
+/* Override any remaining dark elements */
+[class*="bg-gray-8"], [class*="bg-gray-9"], [class*="bg-black"] {
+    background-color: #ffffff !important;
+}
+
+[class*="text-white"] {
+    color: #1e293b !important;
+}
+
+/* Force light theme on all elements */
+div, span, p, h1, h2, h3, h4, h5, h6, li, a, label {
+    color: #1e293b !important;
+}
+
+/* Exception for buttons that should have white text */
+.btn-primary *, button[type="submit"] *, .exam-action-button *, .exam-submit-button * {
+    color: #ffffff !important;
+}
+
+.exam-action-button.secondary * {
+    color: #ffffff !important;
+}

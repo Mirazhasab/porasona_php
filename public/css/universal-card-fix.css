@@ -1,0 +1,283 @@
+
+/*
+Universal Card & Background Fix for Navy Blue Theme
+
+===== OVERRIDE ALL WHITE BACKGROUNDS =====
+.bg-white,
+[class*="bg-white"],
+.card,
+.card-body,
+.modal-content,
+.dropdown-menu,
+.list-group-item {
+    background-color: #1A2B3D !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+}
+
+===== OVERRIDE ALL GRAY TEXT COLORS =====
+.text-gray-900,
+.text-gray-800,
+.text-gray-700,
+.text-gray-600,
+.text-gray-500,
+.text-gray-400,
+.text-gray-300,
+.text-dark,
+.text-black {
+    color: #E0E1DD !important;
+}
+
+.text-muted,
+.text-secondary {
+    color: #B8C5C9 !important;
+}
+
+===== CARD HEADERS & FOOTERS =====
+.card-header,
+.card-footer {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+}
+
+===== BOOTSTRAP BACKGROUND VARIANTS =====
+.bg-light {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+}
+
+.bg-primary {
+    background-color: #1B9AAA !important;
+    color: #E0E1DD !important;
+}
+
+.bg-info {
+    background-color: #2BAAC0 !important;
+    color: #E0E1DD !important;
+}
+
+.bg-success {
+    background-color: #2BAAC0 !important;
+    color: #E0E1DD !important;
+}
+
+.bg-warning {
+    background-color: #FFC107 !important;
+    color: #0D1B2A !important;
+}
+
+.bg-danger {
+    background-color: #C73E1D !important;
+    color: #E0E1DD !important;
+}
+
+.bg-secondary {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+}
+
+===== TABLE STYLING =====
+.table {
+    background-color: #1A2B3D !important;
+    color: #E0E1DD !important;
+}
+*/
+
+.table th,
+.table td {
+    background-color: #1A2B3D !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+}
+
+.table-light th,
+.table-light td {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+}
+
+/* ===== ALERT STYLING =====*/
+.alert {
+    border-color: #1B9AAA !important;
+}
+
+.alert-success {
+    background-color: rgba(43, 170, 192, 0.2) !important;
+    color: #2BAAC0 !important;
+    border-color: #2BAAC0 !important;
+}
+
+.alert-danger {
+    background-color: rgba(199, 62, 29, 0.2) !important;
+    color: #C73E1D !important;
+    border-color: #C73E1D !important;
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.2) !important;
+
+    color: #FFC107 !important;
+    border-color: #FFC107 !important;
+}
+
+.alert-info {
+    background-color: rgba(43, 170, 192, 0.2) !important;
+    color: #2BAAC0 !important;
+    border-color: #2BAAC0 !important;
+}
+
+/* ===== BADGE STYLING ===== */
+.badge {
+    color: #E0E1DD !important;
+}
+
+.badge-primary {
+    background-color: #1B9AAA !important;
+}
+
+.badge-success {
+    background-color: #2BAAC0 !important;
+}
+
+.badge-danger {
+    background-color: #C73E1D !important;
+}
+
+.badge-warning {
+    background-color: #FFC107 !important;
+    color: #0D1B2A !important;
+}
+
+.badge-info {
+    background-color: #2BAAC0 !important;
+}
+
+.badge-secondary {
+    background-color: #2A3B4D !important;
+}
+
+/* ===== FORM STYLING ===== */
+.form-control,
+.form-select {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #1A2B3D !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+    box-shadow: 0 0 0 0.2rem rgba(27, 154, 170, 0.25) !important;
+}
+
+.form-label {
+    color: #E0E1DD !important;
+}
+
+/* ===== MODAL STYLING ===== */
+.modal-header {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+    border-bottom-color: #1B9AAA !important;
+}
+
+.modal-footer {
+    background-color: #2A3B4D !important;
+    border-top-color: #1B9AAA !important;
+}
+
+/* ===== DROPDOWN STYLING ===== */
+.dropdown-item {
+    color: #E0E1DD !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #2A3B4D !important;
+    color: #1B9AAA !important;
+}
+
+/* ===== PAGINATION STYLING ===== */
+.page-link {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+}
+
+.page-link:hover {
+    background-color: #1B9AAA !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+}
+
+.page-item.active .page-link {
+    background-color: #1B9AAA !important;
+    border-color: #1B9AAA !important;
+}
+
+/* ===== BREADCRUMB STYLING ===== */
+.breadcrumb {
+    background-color: #2A3B4D !important;
+}
+
+.breadcrumb-item a {
+    color: #1B9AAA !important;
+}
+
+.breadcrumb-item.active {
+    color: #E0E1DD !important;
+}
+
+/* ===== LIST GROUP STYLING ===== */
+.list-group-item {
+    background-color: #1A2B3D !important;
+    color: #E0E1DD !important;
+    border-color: #1B9AAA !important;
+}
+
+.list-group-item:hover {
+    background-color: #2A3B4D !important;
+}
+
+.list-group-item.active {
+    background-color: #1B9AAA !important;
+    border-color: #1B9AAA !important;
+}
+
+/* ===== PROGRESS BAR STYLING ===== */
+.progress {
+    background-color: #2A3B4D !important;
+}
+
+.progress-bar {
+    background-color: #1B9AAA !important;
+}
+
+/* ===== TOOLTIP & POPOVER STYLING ===== */
+.tooltip-inner {
+    background-color: #1A2B3D !important;
+    color: #E0E1DD !important;
+}
+
+.popover {
+    background-color: #1A2B3D !important;
+    border-color: #1B9AAA !important;
+}
+
+.popover-header {
+    background-color: #2A3B4D !important;
+    color: #E0E1DD !important;
+    border-bottom-color: #1B9AAA !important;
+}
+
+.popover-body {
+    color: #E0E1DD !important;
+}
