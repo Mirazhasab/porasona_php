@@ -1,0 +1,28 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Apache/Server configuration files
+.htaccess
+
+# Vendor dependencies
+vendor/
+
+# Cache files
+cache/
+*.cache
+
+# Log files
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
